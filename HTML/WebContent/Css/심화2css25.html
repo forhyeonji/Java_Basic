@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>블로그완성</title>
+
+<style>
+
+								/*레이아웃*/
+	*{
+		margin:0px;
+		padding:0px;
+	}
+	
+	
+	#container {
+		width:1024px;
+		height:1040px;
+		margin:0px auto;
+		padding-left:5px;
+		padding-right:5px;
+		position:relative;
+	}
+
+	
+	#header {
+		position:relative;
+		height:100px;
+		padding:5px;
+		margin-bottom:5px;
+		background: rgb(113,111,111);
+		background: linear-gradient(180deg, rgba(113,111,111,1) 0%, rgba(162,162,162,1) 46%, rgba(233,233,233,1) 100%);
+	}
+	
+	#main {
+		border:1px black;
+		padding:5px;
+		width:1014px;
+		height:783px;
+		margin-bottom:5px;
+		background-color:#00FF00;
+	}
+	
+	#left_sidebar {
+		border:solid 1px gray;
+		float:left;
+		width:160px;
+		height:150px;
+		background-color:#80F5FF;
+		padding:5px;
+		margin:5px;
+		
+	}
+	
+	#main_main {
+		float:left;
+		width:620px;
+		padding:5px;
+		position:absolute;
+		left:190px;
+	}
+	
+	#main_top {
+		border:solid 1px black;
+		border-radius:10px;
+		background-color:#FFFED7;
+		height:170px;
+		padding:8px;
+		margin-bottom:10px;
+	}
+	
+	
+	#main_middle {
+		border:solid 1px black;
+		border-radius:10px;
+		background-color:#FFFED7;
+		margin-bottom:10px;		
+		height:360px;
+		padding:8px;
+	}
+	
+	
+	#main_bottom {
+		border:solid 1px black;
+		border-radius:10px;
+		background-color:#FFFED7;
+		margin-bottom:10px;
+		height:160px;
+		padding:8px;
+	}
+	
+	
+	#right{
+		float:right;
+	
+	}
+	
+	#right_sidebar1 {
+		border:solid 2px red;
+		width:200px;
+		height:210px;
+		box-sizing:border-box;
+		padding:8px;
+		margin-right:2px;
+		background-color:#FFFFE9;
+		margin-top:5px;
+		margin-bottom:10px;
+		border-radius:10px;
+	}
+	
+	#right_sidebar2 {
+		border:solid 2px red;
+		clear:both;
+		width:200px;
+		height:353px;
+		box-sizing:border-box;
+		margin-right:2px;
+		padding:8px;
+		background-color:#FFFFE9;
+		border-radius:10px;
+	}	
+	
+	#footer {
+		padding:5px;
+		clear:both;
+		background-color:blue;
+	}
+	
+							/*세세한 효과*/
+
+	#소년 {
+		color:red;
+		position:relative;
+		left:5px;
+		top:24px;
+	}
+	
+	#철부지 {
+		position:relative;
+		left:5px;
+		top:37px;
+		clear:both;
+	}
+	
+
+	
+	#abox {
+		border-collapse:collapse;
+		font-size:small;
+		width:600px;
+		hieght:200px;
+		text-align:center;
+		position:absolute;
+		bottom:10px;
+		right:10px;
+		background-color:white;
+		
+	
+	}
+	
+	a {
+		text-decoration-line: none;
+	}
+	
+	ul {
+		list-style:none;
+	}
+</style>
+
+
+
+</head>
+<body>
+
+<div id="container">
+	<!-- header -->
+	<div id="header">
+		<h1 id="소년">소년 가장의 블로그</h1>
+		<p id="철부지">철부지 자취생의 세상 사는 이야기</p>
+		<div>
+		
+			<table border="1" id="abox">
+				<tr>
+					<td><a href="http://www.naver.com/">블로그 설정</a></td>
+					<td><a href="http://google.com">방문자 통계</a></td>
+					<td><a href="http://www.daum.net/">카테고리 편집</a></td>
+					<td><a href="https://blog.naver.com/hyeonni1907">댓글 관리</a></td>
+					<td><a href="https://blog.naver.com/jjk123456789">이웃 블로그</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+
+
+	<div id="main">
+		<!-- left_side bar -->
+		<div id="left_sidebar">
+			<form>
+				회원번호<input type="text" size="17"><br>
+				비밀번호<input type="text" size="17"><br><br>
+				<input type="button" value="로그인">
+				<input type="button" value="회원가입">
+			</form>
+		</div>
+
+
+
+
+
+		<!-- right_side bar -->
+	<div id="right">
+		<div id="right_sidebar1">
+			<br><p>독자를 위한 출판사</p><br>
+			<img src="../img/hanbit.jpg"><br><br>
+
+
+			컴퓨터 기술서<br>
+			전문 경제서<br>
+			대학교제<br><br>
+			
+		</div>
+		
+		
+		<div id="right_sidebar2">
+
+			<br><p>호돌이표 도시락</p><br>
+			<img src="../img/hodori.jpg"><br><br>
+
+
+			영양 만점<br>
+			김치 제공<br>
+		</div>
+	</div>
+
+
+
+	<div id="main_main">
+		<!-- main_top -->
+
+		<div id="main_top">
+			<br>
+			<h4>요리 강좌</h4><br>
+			<p>양은 냄비에 물 600ml 붓고 팔팔 끓이다가 미리 준비해둔 라면을 퐁당 투척한다. 면이 불을 때 쯤에 스프를 탈탈 털어 넣는다.
+			냉장고를 열어보고 계란이 있으면 깨서 넣고 휘휘 저어 준다. 다 먹었으면 김치랑 같이 후루룩 후루룩 먹는다.
+			다 먹고도 배가 안 부르면 밥을 말아 먹으면 배가 든든하다. 배가 부르면 잔다.</p><br>
+		</div>
+
+
+
+
+
+		<!-- main_middle -->
+		<div id="main_middle">
+			<br>
+			<h4>주꾸미 선상 낚시기</h4><br>
+			<p>10월 어느날 부령 오전항에서 친구 녀석과 새벽 5시에 낚시배에 올랐다. 배멀미에 시달려가며 1시간 항해 후 
+			열심히 던지고 감기를 반복하다 난생 처음으로 낚시로 뭔가를 잡아 보았다.</p><br>
+
+			<img src="../img/jukumi.jpg"><br><br>
+
+			<p>너무 예쁘고 가상해서 방생해 주었다. 지금은 아마 서해 바다 어딘가에서 잘 살고 있을 것이다.</p>
+		</div>
+
+
+
+
+
+		<!-- main_bottom -->
+		<div id="main_bottom">
+			<br>
+			<h4>갤럭시 S7 플래티넘 사용기</h4><br>
+			<p>제원 - CPU:제타노스 16코어 64비트 2.8GHz, 메모리:32G, 저장장치 : K플래시 4테라, 
+			LCD:4.8인치 슈퍼 울트라 캡숑 브라이트 플랙서블 아몰레드 초고해상도 3840*2400, 
+			배터리:무선 충전 골드 폴리머 9600mA(대기시간 24일), 카메라:20M 픽셀 10x 광학 이너줌, 
+			5W 스테레오 외부 스피커, 빔 영상 출력, 윈도우 에플레이터 내장.</p>
+		</div>
+
+	</div>	<!-- main_main (only main) -->
+	</div> 	<!-- main (side bar, main) -->
+	
+
+
+	<!-- footer -->
+	<div id="footer">
+		<ul>
+			<li><a href="http://www.naver.com/">회사 소개</a></li>
+			<li><a href="http://www.naver.com/">대표이사 인사말</a></li>
+			<li><a href="http://www.naver.com/">오시는 길</a></li>
+			<li><a href="http://www.naver.com/">광고주를 모집합니다.</a></li>
+		</ul>
+	</div>
+
+
+</div> 	<!-- container -->
+
+</body>
+</html>

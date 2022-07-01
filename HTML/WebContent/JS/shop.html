@@ -1,0 +1,71 @@
+<html>
+<head>
+
+<script type="text/javascript" src="outjs/shop.js"></script>
+</head>
+<body>
+
+<!-- 문제1 -->
+갯수<input type="text" value="0" id="numbox">
+<input type="button" value="+" id="plus"><input type="button" value="-" id="minus">
+
+
+
+<!-- 문제2 -->
+<br><br><h4>취미</h4>
+<ul>
+    <li>야구<input type="checkbox" name="ck" value="야구"></li>
+    <li>농구<input type="checkbox" name="ck" value="농구"></li>
+    <li>게임<input type="checkbox" name="ck" value="게임"></li>
+</ul>
+<input type="button" value="결과보기" id="result">
+<p id="text1"></p>
+<p id="text"></p><br><br>
+
+<!-- 문제3 -->
+
+<h3>글자수 세기</h3>
+<textarea rows="10" cols="50" id="textarea"></textarea><br><br>
+<label>입력문자수 : </label>
+<label id="num"></label>
+
+<!-- 문제4 -->
+<h1>1. +연산</h1>
+<input type="text" id="one">+<input type="text" id="two">
+= <input type="text" id="three">
+<input type="button" value="연산" id="total1">
+<h1>2. 총합 구합기</h1>
+가격 <input type="text" id="price"> x 수량
+<select id="select">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+</select> 
+
+총합 : <label id="total2"></label>
+<h1>3. 총합 구하기2 (선택된 값만)</h1>
+바나나(1000원)<input type="checkbox" name="fruit" value="1000">
+사과(500원)<input type="checkbox" name="fruit" value="500">
+배(1500원)<input type="checkbox" name="fruit" value="1500">
+
+<input type="button" value="총합구하기" id="button">
+선택한 총 가격:<label id="total3"></label><br><br><br>
+
+<!-- 문제5 -->
+<form id="myform">
+    아이디 &nbsp;&nbsp;&nbsp; <input type="text" id="id"><br>
+    비밀번호 &nbsp;<input type="text" id="pass"><br><br>
+    <input type="submit" value="로그인">
+</form>
+
+
+</body>
+
+</html>

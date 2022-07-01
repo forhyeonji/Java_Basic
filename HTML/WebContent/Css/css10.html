@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<style>
+
+#a, #b {
+/*
+border-top : solid ;
+border-left : solid ;
+border-bottom : dashed ;
+border-right : dashed ;
+*/
+
+/*12시부터 시계방향으로 top right bottom left 순서로 축약가능*/
+border-style : solid dashed dashed solid ;
+}
+
+#c {/*
+border-top : solid 10px red;
+border-left : solid 10px yellow ;
+border-bottom : solid 10px blue ;
+border-right : solid 10px green ;
+*/
+
+border-style : solid;
+border-width : 7px;
+border-color : red green blue yellow;
+
+}
+
+#d {
+/*
+border-top : solid 1px;
+border-left : solid 10px;
+border-bottom : solid 6px;
+border-right : solid 3px;
+*/
+
+border : solid;
+border-width : 1px 3px 6px 14px;
+}
+</style>
+
+</head>
+<body>
+<p id="a">상하 좌우에 서로 다른 모양 지정</p>
+<p id="b">상하 좌우에 서로 다른 모양 지정</p>
+<p id="c">각 변에 다른 색상 지정</p>
+<p id="d">각 변에 다른 굵기 지정</p>
+</body>
+</html>

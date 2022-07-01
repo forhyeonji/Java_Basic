@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>inputattr</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<table>
+	<tr>
+		<td>초기값 :</td>
+		<td>
+			<form>
+				<input type="text" value = "경희대학교">
+			</form>		
+		</td>
+	</tr>
+	<tr>
+		<td>안내문자열 :</td>
+		<td>
+			<form>
+				<input type="text" required value="학과를 입력하세요." onfocus="this.value=''" onblur="if(this.value=='')this.value='학과를 입력하세요.'">
+			</form>	
+		</td>
+	</tr>
+	<tr>
+		<td>최대 길이 :</td>
+		<td width = 350>			
+			<form>
+				<input type="text" maxlength=7>* 최대 7자까지만 입력가능*
+			</form>
+			
+		</td>
+	</tr>
+	<tr>
+		<td>입력 길이 :</td>
+		<td>
+			<form>
+				<input type = "text" size = 40>
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td>읽기전용 :</td>
+		<td>
+			<form>
+				<input type = "text" value="읽기전용" readonly/>
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td>사용금지 :</td>
+		<td>
+			<form>
+				<input type = "text" value="사용금지" disabled/>
+			</form>
+		</td>
+	</tr>
+
+</table>
+</body>
+</html>

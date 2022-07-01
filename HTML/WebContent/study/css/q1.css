@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+* {
+	margin:0px;
+	height:0px;
+}
+
+#container{
+	width:1024px;
+	height:700px;
+	margin:0px auto;
+	background-color:#FFF2E6;
+	position:relative;
+}
+
+#header {
+	width:1024px;
+	height:100px;
+	position:relative;
+}
+
+#main {
+
+	background-color:red;
+	width:1024px;
+	height:480px;
+	position:relative;
+}
+
+	#main_top{
+
+	background-color:blue;
+	width:1024px;
+	height:280px;
+	position:absolute;
+	top:100px;
+	}
+	#main_bottom{
+
+	background-color:green;
+	width:1024px;
+	height:200px;
+	position:absolute;
+	top:380px;
+	}
+			#main_bottom1{
+			background-color:pink;
+			width:450px;
+			height:200px;
+			float:left;
+			position:relative;
+			}
+			
+			#main_bottom2{
+			background-color:red;
+			width:287px;
+			height:200px;
+			float:left;
+			}
+			
+			#main_bottom3{
+			background-color:orange;
+			width:287px;
+			height:200px;
+			float:left;
+			position:relative;
+			}
+
+#footer {
+	width:1024px;
+	height:100px;
+	background-color:black;
+}
+
+
+#shop {
+	position:absolute;
+	top:30px;
+	left:15px;
+	font-family:굴림체;
+	color:orange;
+}
+
+
+
+
+
+
+
+

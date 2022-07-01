@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	*{
+		margin:0px;
+		padding:0px;
+	}
+
+	#container {
+		width:1024px;
+		margin:0px auto;
+		padding:10px;
+		border:solid 1px black;
+	}
+
+	#header {
+		padding:20px;
+		margin-bottom:10px;
+		border:solid 1px black;
+	}
+	
+	#main {
+		height:150px;
+	}
+	
+	#main_left {
+		border:solid 1px black;
+		padding:20px;
+		width:600px;
+		float:left;
+	}
+	
+	#main_right {
+		border:solid 1px black;
+		padding:20px;
+		width:300px;
+		float:right;
+	}
+	
+	#footer {
+		border:solid 1px black;
+		clear:both;
+	}
+</style>
+</head>
+<body>
+	<div id="container">
+		<div id="header">2-Column Layout</div>
+		<div id="main">
+			<div id="main_left">
+				<h1>Content</h1>
+				<p>안녕하세요</p>
+				<p>hi</p>			
+			</div>
+			<div id="main_right">
+				<h1>Side Bar</h1>
+				<ul>
+					<li>a</li>
+					<li>b</li>
+					<li>c</li>
+				</ul>
+			</div>		
+		</div>
+		<div id="footer">Copyright</div>
+	</div>
+</body>
+</html>
