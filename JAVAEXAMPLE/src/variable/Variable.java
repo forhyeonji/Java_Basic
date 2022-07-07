@@ -15,12 +15,7 @@ public class Variable {
 		// 원주율 3.14159 값을 f변수에 초기화 해보자
 		float f= 3.14F;
 				*/
-		
-
-		System.out.println('J' + 'ava');
-		
-		
-		
+	
 		
 	}
 
