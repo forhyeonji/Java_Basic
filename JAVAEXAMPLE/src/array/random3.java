@@ -2,7 +2,7 @@ package array;
 
 import java.util.Scanner;
 
-public class random {
+public class random3 {
 
 	public static void main(String[] args) {
 		
@@ -62,4 +62,3 @@ public class random {
 		
 	}
 
-}
