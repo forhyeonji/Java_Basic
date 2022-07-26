@@ -26,8 +26,14 @@
 			
 			<tr>
 				<td><input type="submit" value="로그인"></td>
+				<td colspan="2"><a href="member.jsp">회원가입</a></td>
 			</tr>
-		
+			
+			<tr>
+				<td colspan="2"><a href="memberList.jsp">회원목록</a></td>
+			</tr>
+			
+			
 		</table>
 </form>
 </body>
