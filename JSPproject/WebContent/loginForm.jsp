@@ -11,6 +11,7 @@
 </style>
 </head>
 <body>
+<h1>로그인 하세요</h1>
 <form action="loginServer.jsp">
 		<table>
 			<tr>
@@ -29,10 +30,10 @@
 				<td colspan="2"><a href="member.jsp">회원가입</a></td>
 			</tr>
 			
-			<tr>
+<!-- 			<tr>
 				<td colspan="2"><a href="memberList.jsp">회원목록</a></td>
 			</tr>
-			
+			 -->
 			
 		</table>
 </form>

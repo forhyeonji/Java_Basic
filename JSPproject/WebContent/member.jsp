@@ -27,6 +27,7 @@
 		<tr>
 			<td colspan="2">
 			<input type="submit" value="회원가입">
+			<input type="button" value="취소" onclick="location.href='loginForm.jsp'">
 			</td>
 		</tr>
 	</table>
