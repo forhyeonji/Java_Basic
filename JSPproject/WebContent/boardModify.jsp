@@ -3,33 +3,29 @@
     
 <%@ page import="java.sql.*" %>
 <%@ page import="javax.sql.*" %>
-<%@ page import="javax.naming.*" %>
+<%@ page import="javax.naming.*" %>    
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <style>
-#Title{
-	width : 400px;
+#title {
+width : 353px;
 }
 
-#Content{
-	width : 400px;
-	height : 300px;
+textarea {
+width : 400px;
+height : 250px;
 }
 
-#Modify{
-	margin : 10px;
-}
-
-table, td {
-	border: 1px solid gray;
-	border-collapse: collapse;
-}
 </style>
+
 </head>
 <body>
+<form action="modifyServer.jsp">
 <table>
 <%
 	Connection conn=null;
@@ -58,18 +54,21 @@ table, td {
 		
 %>
 	
-	<tr>
-		<td id="Title"><%=rs.getString("title") %></td>
-	</tr>
+<tr>
+			<td>제목  :  </td>
+			<td><input type="text" id="title" name="title" value=<%=rs.getString("title") %>>
+				<input type="hidden" id="bno" name="bno" value=<%=rs.getString("bno") %>>
+			</td>
+		</tr>
 	
-	<tr>
-		<td id="Content"><%=rs.getString("content") %></td>
-	</tr>
-	
-	<tr>
-		<td id="Modify"><input type="button" value="수정" onclick="location.href='boardModify.jsp?bno=<%=rs.getString("bno") %>'">
-		<input type="button" value="삭제" onclick="location.href='deleteBoard.jsp?bno=<%=rs.getString("bno") %>'"></td>
-	</tr>	
+		<tr>
+			<td colspan="2"><textarea placeholder="Input some text." name="content"><%=rs.getString("content") %></textarea></td>
+		</tr>
+		
+		<tr>
+			<td><input type="submit" value="발행" ></td>
+			<td><input type="button" value="취소" onclick="location.href='main.jsp'"></td>
+		</tr>	
 <%			
 		}
 		
@@ -84,8 +83,9 @@ table, td {
 		}
 %>
 
+
+
 </table>
-
-
+</form>
 </body>
 </html>
