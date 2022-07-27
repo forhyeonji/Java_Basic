@@ -62,7 +62,7 @@
 		} else{//그렇지 않으면
 		//회원가입 화면으로 이동
 			out.println("<script>");
-			out.println("location.href='member.jsp'");
+			out.println("location.href='loginForm.jsp'");
 			out.println("</script>");
 			}
 

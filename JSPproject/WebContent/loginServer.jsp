@@ -57,12 +57,14 @@
 		//메인페이지로 이동
 
 		out.println("<script>");
+		out.println("alert('로그인 성공')");
 		out.println("location.href='main.jsp'");
 		out.println("</script>");
 		
 	} else { //그렇지 않으면
 		//loginForm.jsp를 실행
 		out.println("<script>");
+		out.println("alert('로그인 실패')");
 		out.println("location.href='loginForm.jsp'");
 		out.println("</script>");
 		

@@ -18,11 +18,18 @@
 	background-color:powderblue;
 }
 
+.But{
+	border : 1px solid skyblue;
+	background-color: white;
+	color : skyblue;
+	padding : 5px;
+	
+}
 
 </style>
 </head>
 <body>
-<input type="button" value="글쓰기" onclick="location.href='board.jsp'" id="write">
+<input type="button" class="But" value="글쓰기" onclick="location.href='board.jsp'" id="write">
 
 <table>
 	<tr id="fixed_title">
@@ -47,7 +54,7 @@ try {
 			
 //List를 저장하기 위한 sql 문장
 //MySQL에서 확인하고 복붙
-pstmt = conn.prepareStatement("select * from board");
+pstmt = conn.prepareStatement("select * from board order by bno desc");
 
 //위 SQL 문장을 실행 (workbench : ctrl+enter)
 rs = pstmt.executeQuery();
