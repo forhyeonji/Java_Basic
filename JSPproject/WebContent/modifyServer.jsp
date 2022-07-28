@@ -55,7 +55,7 @@
 		//로그인 화면으로 이동
 			out.println("<script>");
 			out.println("alert('수정 하였습니다.')");
-			out.println("location.href='main.jsp'");
+			out.println("location.href='detailBoard.jsp?bno="+bno+"'"); 
 			out.println("</script>");
 		} else{//그렇지 않으면
 		//회원가입 화면으로 이동

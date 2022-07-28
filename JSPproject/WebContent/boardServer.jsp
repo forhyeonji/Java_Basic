@@ -13,6 +13,10 @@
 <body>
 
 <%
+	//한글깨짐 방지 설정
+	request.setCharacterEncoding("UTF-8");
+	
+
 
 	String title=request.getParameter("title");
 	String content=request.getParameter("content");

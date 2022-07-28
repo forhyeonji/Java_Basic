@@ -51,9 +51,7 @@ table {
 	PreparedStatement pstmt=null;
 	PreparedStatement pstmt2=null;
 	ResultSet rs = null;
-	String bno=request.getParameter("bno");
-	String title=request.getParameter("title");
-	String content=request.getParameter("content");
+	int bno=Integer.parseInt(request.getParameter("bno"));
 	String idver=(String)session.getAttribute("id");
 	
 	
@@ -65,9 +63,9 @@ table {
 			pstmt = conn.prepareStatement("select * from board where bno=?");
 			pstmt2 = conn.prepareStatement("update board set cnt=cnt+1 where bno=?");
 			
-			pstmt.setString(1, bno);
+			pstmt.setInt(1, bno);
 	
-			pstmt2.setString(1, bno);
+			pstmt2.setInt(1, bno);
 			
 			rs = pstmt.executeQuery();
 			pstmt2.executeUpdate();

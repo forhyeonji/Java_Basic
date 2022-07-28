@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+    
 <%@ page import="java.sql.*" %>
 <%@ page import="javax.sql.*" %>
 <%@ page import="javax.naming.*" %> 
@@ -10,7 +12,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-#write {
+.write {
 	margin:10px;
 }
 
@@ -26,10 +28,38 @@
 	
 }
 
+#logout{
+
+	position:absolute;
+	left : 780px;
+} 
+
 </style>
 </head>
 <body>
-<input type="button" class="But" value="글쓰기" onclick="location.href='board.jsp'" id="write">
+
+		<%if(session.getAttribute("id")!=null){ %>
+		<input type="button" class="But" value="글쓰기" onclick="location.href='board.jsp'" class="write">
+		<input type="button" class="But" value="로그아웃" onclick="location.href='logoutServer.jsp'" class="write" id="logout">
+		<%} else { %>
+		<input type="button" class="But" value="로그인" onclick="location.href='loginForm.jsp'" class="write">
+		<%}%>
+
+
+	<%-- 
+	<c:choose>
+		<c:when test="${id!=null}">
+			<input type="button" class="But" value="글쓰기" onclick="location.href='board.jsp'" class="write">
+			<input type="button" class="But" value="로그아웃" onclick="location.href='logoutServer.jsp'" class="write" id="logout">
+		</c:when>
+		
+		<c:when test="${id=null}">
+			<input type="button" class="But" value="로그인" onclick="location.href='loginForm.jsp'" class="write">
+		</c:when>
+	</c:choose>
+  --%>
+ 
+ 
 
 <table>
 	<tr id="fixed_title">
@@ -62,17 +92,21 @@ rs = pstmt.executeQuery();
 while(rs.next()){
 	
 %>
+
+
 	
 	<tr>
 		<td width="50px" style="text-align:center"><%=rs.getString("bno") %></td>
-		<td width="300px"><a href="detailBoard.jsp?bno=<%=rs.getString("bno") %>"><%=rs.getString("title") %></a></td>
+		<td width="400px"><a href="detailBoard.jsp?bno=<%=rs.getString("bno") %>"><%=rs.getString("title") %></a></td>
 		<td width="200px" style="text-align:center"><%=rs.getString("regdate") %></td>
 		<td width="70px" style="text-align:center"><%=rs.getString("cnt") %></td>
 		<td width="100px" style="text-align:center"><%=rs.getString("id") %></td>
 	</tr>	
+
+
 	
 <%	
-			}
+		}
 
 
 		} catch (Exception e){		

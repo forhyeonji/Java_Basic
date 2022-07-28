@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>로그인 하세요</h1>
-<form action="loginServer.jsp">
+<form action="loginServer.jsp" method="post">
 		<table>
 			<tr>
 				<td>아이디</td>
