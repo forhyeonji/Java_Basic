@@ -12,9 +12,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-.write {
-	margin:10px;
-}
 
 #fixed_title {
 	background-color:powderblue;
@@ -25,7 +22,7 @@
 	background-color: white;
 	color : skyblue;
 	padding : 5px;
-	
+	margin:10px;
 }
 
 #logout{
@@ -39,10 +36,10 @@
 <body>
 
 		<%if(session.getAttribute("id")!=null){ %>
-		<input type="button" class="But" value="글쓰기" onclick="location.href='board.jsp'" class="write">
-		<input type="button" class="But" value="로그아웃" onclick="location.href='logoutServer.jsp'" class="write" id="logout">
+		<input type="button" class="But" value="글쓰기" onclick="location.href='board.jsp'">
+		<input type="button" class="But" value="로그아웃" onclick="location.href='logoutServer.jsp'" id="logout">
 		<%} else { %>
-		<input type="button" class="But" value="로그인" onclick="location.href='loginForm.jsp'" class="write">
+		<input type="button" class="But" value="로그인" onclick="location.href='loginForm.jsp'">
 		<%}%>
 
 
