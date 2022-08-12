@@ -12,8 +12,8 @@
 <form action="/login" method="post">
 아이디 <input type="text" name="id">
 비밀번호 <input type="text" name="password"><br>
-<input type="submit" value="로그인">
 
+<input type="submit" value="로그인">
 <input type="button" value="회원가입" onclick="location.href='http://localhost:8080/member'">
 </form>
 </body>
