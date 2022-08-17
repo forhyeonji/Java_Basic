@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.hj.mapper.BoardMapper;
 import org.hj.model.BoardVO;
+import org.hj.model.CriteriaVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +24,9 @@ import org.springframework.stereotype.Service;
 		
 	
 		// BoardService에서 설계되어진 list추상메서드를 구현
-		public ArrayList<BoardVO> list() {
-			return bm.list();
+		public ArrayList<BoardVO> list(CriteriaVO cri) {
+			System.out.println(cri);
+			return bm.list(cri);
 		}
 	
 		
@@ -44,6 +46,9 @@ import org.springframework.stereotype.Service;
 			bm.remove(board);
 		}
 		
+		public int total() {
+			return bm.total();
+		}
 		
 	
 }

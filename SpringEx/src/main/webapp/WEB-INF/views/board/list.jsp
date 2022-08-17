@@ -32,5 +32,42 @@
 
 </table>
 
+${paging}
+
+<!-- prev(이전)이 true이면 이전버튼 활성화 -->
+<c:if test="${paging.prev}">
+	<a href="/list?pageNum=${paging.startPage-1}&amount=${paging.cri.amount}">이전</a>
+</c:if>
+
+
+<!-- begin(1)이 end(10)이 될 동안 반복 -->
+<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+	<a href="/list?pageNum=${num}&amount=${paging.cri.amount}"> ${num} </a>
+</c:forEach>
+
+
+<!-- next(다음)이 true이면 다음버튼 활성화 -->
+<c:if test="${paging.next}">
+	<a href="/list?pageNum=${paging.endPage+1}&amount=${paging.cri.amount}">다음</a>
+</c:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

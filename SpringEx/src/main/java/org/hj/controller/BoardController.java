@@ -3,6 +3,8 @@ package org.hj.controller;
 import javax.servlet.http.HttpSession;
 
 import org.hj.model.BoardVO;
+import org.hj.model.CriteriaVO;
+import org.hj.model.pageVO;
 import org.hj.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,12 +24,25 @@ public class BoardController {
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	// 게시판 목록 리스트
-	public String list (Model model) {
+	public String list (Model model, CriteriaVO cri) {
 		// list.jsp 실행 할 때 select 된 결과를 가져와라
-		model.addAttribute("list", bs.list());
+		model.addAttribute("list", bs.list(cri));
+		// ﻿list.jsp 실행 할 때 PageVO에 저장되어 있는 데이터를 가져와라
+		//								생성자 호출 (매개변수가 2개인 생성자)
 		
+		// board 테이블(게시판 테이블)에 전체 건수(select)를 아래에 138 대신에 대입
+		int total = bs.total();
+		// model.addAttribute("paging", new pageVO(cri, 138));
+		model.addAttribute("paging", new pageVO(cri, total));
 		return "board/list";
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

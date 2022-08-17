@@ -12,7 +12,17 @@
   		</insert>
   		
   		<select id="list" resultType="org.hj.model.BoardVO">
-  			select * from board
+  			select *
+			from (
+			select @rownum:= @rownum+1 rownum, b.*
+			from board b, (select @rownum:=0) as tmp
+			order by bno desc
+			) as boardlist
+			
+			<![CDATA[
+			where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+  			]]>
+  			
   		</select>
   		
   		<select id="detail" resultType="org.hj.model.BoardVO">
@@ -30,6 +40,11 @@
   			delete from board
   			where bno=#{bno}
   		</delete>
+  		
+  		<select id="total" resultType="int">
+  		<!-- 건수만 실어서 보내기 때문에 resultType="org.hj.model.BoardVO"에 실을필요 없음 -->
+  			select count(*) from board
+  		</select>
   		
   		
   </mapper>

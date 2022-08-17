@@ -1,6 +1,6 @@
 package study;
 import java.util.Scanner;
-public class test01 {
+public class square {
 
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
