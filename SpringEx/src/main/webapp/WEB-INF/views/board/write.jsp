@@ -13,6 +13,8 @@
 <form action="/write" method="post">
 제목 <input type="text" name="title"><br>
 내용 <input type="text" name="content">
+<input type="hidden" name="id" value="${login.id}">
+
 <input type="submit" value="글쓰기">
 </form>
 

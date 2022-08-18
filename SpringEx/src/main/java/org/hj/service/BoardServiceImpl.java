@@ -7,6 +7,7 @@ import org.hj.model.BoardVO;
 import org.hj.model.CriteriaVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 	@Service
 	public class BoardServiceImpl implements BoardService {
@@ -30,9 +31,15 @@ import org.springframework.stereotype.Service;
 		}
 	
 		
+		@Transactional
 		public BoardVO detail(BoardVO board) {
+			// 상세페이지 조회 할 때
+			// 조회수+1 업데이트 해라
+			bm.cntup(board);
 			return bm.detail(board);
 		}
+		
+		
 	
 		
 		// BoardService에서 설계되어진 modify 추상메서드를 구현
@@ -46,8 +53,10 @@ import org.springframework.stereotype.Service;
 			bm.remove(board);
 		}
 		
-		public int total() {
-			return bm.total();
+		
+		// BoardService에서 설계되어진 total 추상메서드를 구현
+		public int total(CriteriaVO cri) {
+			return bm.total(cri);
 		}
 		
 	

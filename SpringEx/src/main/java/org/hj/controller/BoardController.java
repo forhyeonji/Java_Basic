@@ -31,7 +31,7 @@ public class BoardController {
 		//								생성자 호출 (매개변수가 2개인 생성자)
 		
 		// board 테이블(게시판 테이블)에 전체 건수(select)를 아래에 138 대신에 대입
-		int total = bs.total();
+		int total = bs.total(cri);
 		// model.addAttribute("paging", new pageVO(cri, 138));
 		model.addAttribute("paging", new pageVO(cri, total));
 		return "board/list";

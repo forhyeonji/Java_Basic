@@ -23,6 +23,8 @@ public interface BoardService {
 	public void remove(BoardVO board);
 	
 	// board테이블 전체건수 설계
-	public int total();
+	public int total(CriteriaVO cri);
+	
+
 	
 }
