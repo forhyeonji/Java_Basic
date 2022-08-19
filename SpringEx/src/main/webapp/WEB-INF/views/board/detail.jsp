@@ -5,9 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/resources/js/reply.js"></script>
 </head>
 <body>
-
+${login}
 
 	<form method="post">
 		<table border="1">
@@ -15,8 +17,10 @@
 				<td>제목</td> 
 				<td><input type="text" value="${detail.title}" name="title">
 					<input type="hidden" value="${detail.bno}" name="bno">
+					<input type="hidden" value="${login.id}" name="id">
 				</td>
 			</tr>
+
 			
 			<tr>
 				<td>내용</td> <td><textarea name="content">${detail.content}</textarea></td>
@@ -26,10 +30,26 @@
 				<td><input type="submit" value="수정" formaction="/board/modify"></td>
 				<td><input type="submit" value="삭제" formaction="/board/remove"></td>
 			</tr>
-			
+		
 		</table>
 	</form>
 	
+	<div><label>댓글</label></div>
+	
+	<div>
+		<textarea row="5" cols="50" id="reply"></textarea>
+	</div>
+	
+	<div>
+		<input type="button" value="댓글쓰기" id="add">
+	</div>
+	
+	<div>
+		<ul id="replyUL">
+
+
+		</ul>
+	</div>
 	
 
 </body>
