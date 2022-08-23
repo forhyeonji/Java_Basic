@@ -37,17 +37,15 @@ ${login}
 	<div><label>댓글</label></div>
 	
 	<div>
-		<textarea row="5" cols="50" id="reply"></textarea>
+		<textarea rows="5" cols="50" id="reply"></textarea>
 	</div>
 	
 	<div>
 		<input type="button" value="댓글쓰기" id="add">
 	</div>
 	
-	<div>
+	<div id="chat">
 		<ul id="replyUL">
-
-
 		</ul>
 	</div>
 	
