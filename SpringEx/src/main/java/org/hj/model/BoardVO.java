@@ -1,5 +1,7 @@
 package org.hj.model;
 
+import java.util.ArrayList;
+
 public class BoardVO {
 
 	
@@ -15,6 +17,19 @@ public class BoardVO {
 	private int cnt;
 	// 아이디 (id)
 	private String id;
+	
+	// AttachFileVO (파일업로드 관련 model)
+	private ArrayList<AttachFileVO> attach;
+	
+	
+	
+	// getter & setter 메서드
+	public ArrayList<AttachFileVO> getAttach() {
+		return attach;
+	}
+	public void setAttach(ArrayList<AttachFileVO> attach) {
+		this.attach = attach;
+	}
 	public int getBno() {
 		return bno;
 	}
@@ -56,11 +71,11 @@ public class BoardVO {
 	@Override
 	public String toString() {
 		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", regdate=" + regdate + ", cnt="
-				+ cnt + ", id=" + id + "]";
+				+ cnt + ", id=" + id + ", attach=" + attach + "]";
 	}
 	
 	
-	// getter & setter 메서드
+	
 	
 	
 	

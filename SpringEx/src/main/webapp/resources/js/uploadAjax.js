@@ -52,9 +52,11 @@ $(document).ready(function(){
 	
 	
 	// 파일전송버튼 (id="uploadBtn")을 클릭하면
-	$("#uploadBtn").on("click",function(){
+	$("#uploadBtn").on("click",function(e){
 		
-		//alert("aaaa");
+		e.preventDefault();
+		alert("보드합쳐졌니?");
+		
 		// 파일 업로드 관련 로직 처리
 		// .jsp의 form태그를 대체(FormData함수)
 		var formData = new FormData();
@@ -82,14 +84,48 @@ $(document).ready(function(){
 			
 		}
 		
+		
 		// ajax를 통해서 UploadController에 파일 관련 데이터 전송.
 		$.ajax({
 			type : "post",
 			url : "/uploadAjaxAction",
 			data : formData,
 			contentType : false,
-			processData : false
-			
+			processData : false,
+			dataType:"json",
+			success : function(result){
+				console.log(result)
+				
+				var str="";
+				
+				// str+="<li><img src='resources/img/"+result[0].fileName+"'></li>"
+				
+				$(result).each(function(i, obj){
+					//console.log(obj);
+					//console.log(obj.fileName);
+					
+					
+					
+					if(obj.image){
+						
+					var filePath=encodeURIComponent(obj.uploadPath + "/s_" + obj.uuid + "_" + obj.fileName)
+					console.log(filePath)	
+					
+					str+="<li><img src='display?fileName="+filePath+"'>"+obj.fileName+"</li>";
+					
+					} else {// 이미지가 아니라면
+						// 다운로드 할 수 있도록 실행
+						
+						var filePath=encodeURIComponent(obj.uploadPath + "/" + obj.uuid + "_" + obj.fileName)
+						str+="<li><a href='download?fileName="+filePath+"'>"+ obj.fileName +"_다운받기</a></li>"
+						
+						
+						
+					}
+				})
+				
+				$("#uploadResult ul").html(str);
+			}
 		})
 		
 	}) //#uploadBtn
@@ -97,3 +133,18 @@ $(document).ready(function(){
 	
 	
 }) //document.ready
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -13,9 +13,17 @@
 <div>
 		<input type="file" name="uploadFile" multiple>
 </div>
-
+<div>
 		<input type="button" id="uploadBtn" value="파일전송">
+</div>
 
+<div id="uploadResult">
+	<ul>
+		
+	</ul>
+</div>	
+		
+		
 
 </body>
 </html>
