@@ -13,15 +13,10 @@
 
 <h1>게시판 글쓰기 화면</h1>
 
-<form action="/write" method="post">
+<form action="/write" method="post" id="form">
 제목 <input type="text" name="title"><br>
 내용 <input type="text" name="content"><br>
-<input type="hidden" name="id" value="${login.id}"> <!-- 로그인 한 아이디로 글쓰기 -->
 
-<input type="text" name="fileName"><br>
-<input type="text" name="uuid"><br>
-<input type="text" name="uploadpath"><br>
-<input type="text" name="image"><br>
 
 
 

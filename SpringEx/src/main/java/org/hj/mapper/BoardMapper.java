@@ -27,4 +27,6 @@ public interface BoardMapper {
 	
 	// 목록 리스트에서 제목을 클릭한 후 상세내역을 조회할 때 조회수도 같이 update 작업
 	public void cntup(BoardVO board);
+	
+	
 }

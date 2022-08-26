@@ -97,6 +97,7 @@ $(document).ready(function(){
 				console.log(result)
 				
 				var str="";
+				var input="";
 				
 				// str+="<li><img src='resources/img/"+result[0].fileName+"'></li>"
 				
@@ -104,6 +105,10 @@ $(document).ready(function(){
 					//console.log(obj);
 					//console.log(obj.fileName);
 					
+					input+="<input type='text' name='attach["+i+"].fileName' value='"+obj.fileName+"'>";
+					input+="<input type='text' name='attach["+i+"].uuid' value='"+obj.uuid+"'>";
+					input+="<input type='text' name='attach["+i+"].uploadPath' value='"+obj.uploadPath+"'>";
+					input+="<input type='text' name='attach["+i+"].image' value='"+obj.image+"'>";
 					
 					
 					if(obj.image){
@@ -125,6 +130,7 @@ $(document).ready(function(){
 				})
 				
 				$("#uploadResult ul").html(str);
+				$("#form").append(input).submit();
 			}
 		})
 		

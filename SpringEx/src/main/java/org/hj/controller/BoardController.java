@@ -1,16 +1,22 @@
 package org.hj.controller;
 
-import javax.servlet.http.HttpSession;
 
+
+import java.util.ArrayList;
+
+import org.hj.model.AttachFileVO;
 import org.hj.model.BoardVO;
 import org.hj.model.CriteriaVO;
 import org.hj.model.pageVO;
 import org.hj.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -89,12 +95,24 @@ public class BoardController {
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
 	public String writePost (BoardVO board) {
 		// 비즈니스 영역 연결한 후 BoardService
+		System.out.println("Controller="+board);
 		bs.write(board);
+
 		return "redirect:/list";
 	}
 	
 	
+	// 해당게시물의 첨부파일의 데이터를 ajax로 전송
+	@RequestMapping(value="/attachlist", method=RequestMethod.GET)
+	public ResponseEntity<ArrayList<AttachFileVO>> uploadAjaxPost(int bno) {
+	
+		return new ResponseEntity<>(bs.attachlist(bno), HttpStatus.OK);
+	}
 
+
+
+	
+	
 
 	
 	

@@ -6,10 +6,20 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="org.hj.mapper.BoardMapper">
+  		
+  		<!-- 제목, 내용을 board 테이블 insert -->
   		<insert id="write">
-  			insert into board(title, content, id, regdate)
-			values(#{title}, #{content}, #{id}, now())
+  			<selectKey keyProperty="bno" order="BEFORE" resultType="int">   
+  				select max(bno)+1 bno from board
+  			</selectKey>
+  		
+  			insert into board(title, content, regdate, bno)
+			values(#{title}, #{content}, now(), #{bno})
   		</insert>
+  		
+  		
+  		
+  		
   		
          <select id="list" resultType="org.hj.model.BoardVO">
            select *

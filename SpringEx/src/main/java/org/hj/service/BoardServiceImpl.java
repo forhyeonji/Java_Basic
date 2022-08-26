@@ -2,7 +2,9 @@ package org.hj.service;
 
 import java.util.ArrayList;
 
+import org.hj.mapper.BoardAttachMapper;
 import org.hj.mapper.BoardMapper;
+import org.hj.model.AttachFileVO;
 import org.hj.model.BoardVO;
 import org.hj.model.CriteriaVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +17,26 @@ import org.springframework.transaction.annotation.Transactional;
 		@Autowired
 		BoardMapper bm;
 		
+		@Autowired
+		BoardAttachMapper bam;
+		
+		
 		// BoardService 에서 설계되어진 write 추상메서드를 구현
 		public void write(BoardVO board) {
 			// BoardMapper에 있는 write메서드를 호출
 			// 메서드의 매개변수를 통해 BoardVO 값을
 			// BoardMapper의 write 메서드로 전달
 			bm.write(board);
+			
+			board.getAttach().forEach(attach->{
+				
+			// AttachFileVOdml bno에 board의 bno를 저장해라 
+				attach.setBno(board.getBno());
+				
+				bam.insert(attach);
+			});
+			
+			
 		}
 		
 	
@@ -57,6 +73,12 @@ import org.springframework.transaction.annotation.Transactional;
 		// BoardService에서 설계되어진 total 추상메서드를 구현
 		public int total(CriteriaVO cri) {
 			return bm.total(cri);
+		}
+		
+		
+		// 첨부파일 조회 구현
+		public ArrayList<AttachFileVO> attachlist (int bno){
+			return bam.attachlist(bno);
 		}
 		
 	
