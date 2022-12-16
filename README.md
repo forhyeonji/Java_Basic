@@ -3,6 +3,7 @@
 
 - 기본 알고리즘
 - html, css
+- JS
 - jsp
 - Spring mvc
 - 게시판 만들기 (CURD)
